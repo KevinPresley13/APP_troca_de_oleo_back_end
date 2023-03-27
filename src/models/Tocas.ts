@@ -42,4 +42,4 @@ export const Troca = sequelize.define<OleoInstance>('Troca',{
 },{
     tableName: 'troca_de_oleo',
     timestamps: false
-});
+});''
