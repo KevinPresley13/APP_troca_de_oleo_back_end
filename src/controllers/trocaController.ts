@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { Op } from 'sequelize';
 import { Troca } from '../models/Trocas';
 import { sequelize } from "../instances/mysql";
 
@@ -32,6 +33,18 @@ export const remove = async (req: Request, res: Response) => {
     }else{
         res.json({ msg: 'erro na exclusão!'})
     }
+};
+
+export const search = async (req: Request, res: Response) => {
+    let query: string = req.query.busca as string;
+    let trocaList = await Troca.findAll({
+        where:{
+            nome_cliente: {
+                [Op.like]: `%${query}%`
+            }
+        }
+    });
+    res.json({trocaList});
 };
 
 
