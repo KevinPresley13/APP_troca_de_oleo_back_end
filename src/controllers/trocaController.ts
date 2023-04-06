@@ -15,6 +15,7 @@ export const add =async (req: Request, res: Response) => {
             nome_cliente: req.body.nome_cliente,
             telefone_cliente: req.body.telefone_cliente,
             nome_oleo: req.body.nome_oleo,
+            filtro: req.body.filtro,
             odometro: req.body.odometro,
             data_troca: req.body.data_troca,
             proxima_troca: req.body.proxima_troca

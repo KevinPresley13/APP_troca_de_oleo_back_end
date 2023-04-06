@@ -6,6 +6,7 @@ export interface OleoInstance extends Model{
     nome_cliente: string,
     telefone_cliente: string,
     nome_oleo: string,
+    filtro: string,
     odometro: number,
     data_troca: string,
     proxima_troca:string
@@ -27,6 +28,9 @@ export const Troca = sequelize.define<OleoInstance>('Troca',{
     nome_oleo: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    filtro:{
+        type: DataTypes.STRING
     },
     odometro: {
         type: DataTypes.INTEGER
